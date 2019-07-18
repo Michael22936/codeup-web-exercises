@@ -5,10 +5,11 @@
         <title>Register with us</title>
     </head>
     <body>
-    <h1>Register with us</h1>
-    <form method="POST" action="https://www.elformo.com/forms/082103e2-b22b-4eee-978d-67e479ae7242
 
-">
+    <!----------------------------------------STRUCTURE-------------------------------------------->
+
+    <h1>Register with us</h1>
+    <form method="POST" action="https://request-inspector.glitch.me/">
 
         <label for="username">email</label>
         <input id="username" name="username" type="text" placeholder="Enter your email">
@@ -18,28 +19,46 @@
         <input id="password" name="password" type="password" placeholder="Enter your password">
         <br>
 
+        <!---------------------------------TEXTAREA------------------------------------------------>
+
         <textarea name="Bio" placeholder="Tell me about yourself"></textarea>
         <br>
 
         <h3> How did you hear about us?</h3>
-        <label for="checkbox">billboard</label>
-        <input id="checkbox" type="checkbox" name="quiz-question-1" value="billboard"><br>
-        <label for="checkbox1">radio advertisement</label>
-        <input id="checkbox1" type="checkbox" name="quiz-question-1" value="radio-advertisement"><br>
-        <label for="checkbox2">internet advertisement</label>
-        <input id="checkbox2" type="checkbox" name="quiz-question-1" value="internet-advertisement"><br>
-        <label for="checkbox3">other</label>
-        <input id="checkbox3" type="checkbox" name="quiz-question-1" value="other"><br>
+
+        <!----------------------------------BILLBOARD------------------------------------------------>
+
+        <label for="radio">billboard</label>
+        <input id="radio" type="checkbox" name="learn-about" value="billboard">
         <br>
 
-        <h3>What web browser are you using</h3>
-        <select name="web-browser">
+        <!---------------------------------RADIO ADVERTISEMENT----------------------------------------->
+
+        <label for="radio1">radio advertisement</label>
+        <input id="radio1" type="checkbox" name="learn-about" value="radio-advertisement">
+        <br>
+
+        <!---------------------------------INTERNET ADVERTISEMENT-------------------------------------->
+
+        <label for="radio2">internet advertisement</label>
+        <input id="radio2" type="checkbox" name="learn-about" value="internet-advertisement">
+        <br>
+
+       <!------------------------------------OTHER------------------------------------------------------->
+
+        <label for="radio3">other</label>
+        <input id="radio3" type="checkbox" name="learn-about" value="other">
+        <br>
+
+        <!---------------------------------------DROP DOWN--------------------------------------------->
+        <label for="browser">What is the browser you are using?</label>
+        <select name="browser" id="browser">
             <option value="google">Google</option>
             <option value="yahoo">Yahoo</option>
             <option value="firefox">Firefox</option>
         </select>
         <br>
-
+        <!---------------------------------------BUTTON----------------------------------------------->
         <input type="submit">
     </form>
     </body>
