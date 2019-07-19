@@ -1,0 +1,16 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+
+}
+
+.message{
+    width: 100%;
+    background-color: blue;
+    border-radius: 15px;
+    margin: 25px;
+    border-box: border;
+}
