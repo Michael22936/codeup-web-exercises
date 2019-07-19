@@ -4,6 +4,10 @@
     text-align: center;
 }
 
+p{
+    text-align: center;
+}
+
 h2{
     color: hotpink;
     text-decoration: underline;
@@ -49,6 +53,7 @@ a:visited{
 
 a:hover{
     color: hotpink;
+    font-size: 100px;
 }
 
 a:active{
@@ -56,5 +61,15 @@ a:active{
 }
 
 td,tr{
-    border: 2px solid lime;
+    border-style: solid;
+    border-collapse: collapse;
+}
+
+tr:hover{
+    background-color: #f5f5f5;
+}
+
+th{
+    border: 2px solid pink;
+    background-image: url("../img/welcome-img-4.jpg");
 }
