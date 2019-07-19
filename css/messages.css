@@ -8,9 +8,30 @@ body, html {
 }
 
 .message{
-    width: 100%;
     background-color: blue;
+    border: 1px solid lightgray;
     border-radius: 15px;
-    margin: 25px;
-    border-box: border;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.message-info{
+    background-color: #CDDEFF;
+    color: #5755AA;
+}
+
+.message-success{
+    background-color: #CFF3DA;
+    color: #509668;
+}
+
+.message-warning{
+    background-color: #FCFBC9;
+    color: #89750E;
+}
+
+.message-error{
+    background-color: #FAD2D7;
+    color: #9B3F51;
 }
