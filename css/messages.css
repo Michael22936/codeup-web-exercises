@@ -6,8 +6,21 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
+:root{
+    --bg-info: rgb(205, 222, 255);
+    --text-info: rgb(41,29, 136);
+
+    --bg-success: rgb(207, 242, 218);
+    --text-success: rgb(32,112, 58);
+
+    --bg-warning: rgb(252,	251, 201);
+    --text-warning: rgb(139, 118, 20);
+
+    --bg-error: rgb(250, 210, 215);
+    --text-error: rgb(122,9, 36);
+}
+
 .message{
-    background-color: blue;
     border: 1px solid lightgray;
     border-radius: 15px;
     margin: 1em;
@@ -17,21 +30,29 @@ body, html {
 }
 
 .message-info{
+    /*background-color: var(--bg-info)*/
     background-color: #CDDEFF;
+    /*color: var(--text-info);*/
     color: #5755AA;
 }
 
 .message-success{
-    background-color: #CFF3DA;
+    /*background-color: var(--bg-success);*/
+    background-color: #CFF3DA ;
+    /*color: var(--text-success);*/
     color: #509668;
 }
 
 .message-warning{
+    /*background-color: var(--bg-warning);*/
     background-color: #FCFBC9;
+    /*color: var(--text-warning);*/
     color: #89750E;
 }
 
 .message-error{
+    /*background-color: var(--bg-error);*/
     background-color: #FAD2D7;
+    /*color: var(--text-error);*/
     color: #9B3F51;
 }
