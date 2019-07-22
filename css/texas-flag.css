@@ -1,0 +1,28 @@
+.container{
+    width: 950px;
+    height: 950px;
+    border: 1px solid lightgray;
+}
+
+.blue-container{
+    background-color: blue;
+    width: 25%;
+    height: 100%;
+}
+
+.star{
+    background-color: white;
+}
+
+.white-container{
+    background-color: white;
+    width: 25%;
+    height: 50%;
+}
+
+.red-container{
+    background-color: red;
+    width: 25%;
+    height: 50%;
+    float: right;
+}
