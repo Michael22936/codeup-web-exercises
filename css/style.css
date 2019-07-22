@@ -11,6 +11,7 @@ p{
 h2{
     color: hotpink;
     text-decoration: underline;
+    text-align: center;
 }
 
 body{
@@ -23,10 +24,14 @@ body{
 
 ol{
     list-style: square;
+    text-align: center;
+    list-style: inside;
 }
 
 ul{
     list-style: circle;
+    text-align: center;
+    list-style: inside;
 }
 
 body{
