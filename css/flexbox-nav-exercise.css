@@ -20,13 +20,36 @@ nav{
 
 .nav-items{
     padding: 5px;
+    margin: 1em;
 }
 
 .nav-items a{
     text-decoration: none;
     color: black;
+    font-weight: bold;
+    display: flex;
+    font-family: 'Work Sans', sans-serif;
+
 }
 
 a:hover{
     color: blue;
+}
+
+.logo{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    margin: auto;
+}
+.logo a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 3em;
+}
+
+.ul{
+    display: inline-block;
+    padding: auto 0;
+    margin: auto;
 }
