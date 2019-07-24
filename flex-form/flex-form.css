@@ -60,6 +60,7 @@ body {
 }
 .flex-form {
     align-self: center;
+    align-items: flex-start;
     /* flex items */
 }
 .destination {
