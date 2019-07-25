@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(56 , 1fr);
+    grid-template-rows: repeat(56 , 1fr);
+    background: white;
+    width: 500px;
+    height: 500px;
+}
+
+
+.yellow{
+    background-color: #EAC807;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    z-index: 1;
+}
+
+.red{
+    background-color: #A41401;
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
+}
