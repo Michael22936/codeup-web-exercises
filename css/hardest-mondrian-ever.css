@@ -32,3 +32,52 @@ main{
     grid-row: 1 / 2;
     grid-column: 4 / 5;
 }
+
+.yellow1{
+    background-color: #EAC807;
+    grid-row: 1 / 2;
+    grid-column: 7 / 8;
+}
+
+.red1{
+    background-color: #A41401;
+    grid-row: 1 / 2;
+    grid-column: 12 / 13;
+}
+
+.red2{
+    background-color: #A41401;
+    grid-row: 1 / 2;
+    grid-column: 33 / 34;
+}
+
+.yellow2{
+    background-color: #EAC807;
+    grid-row: 1 / 2;
+    grid-column: 35 / 36;
+}
+
+.yellow3{
+    background-color: #EAC807;
+    grid-row: 1 / 2;
+    grid-column: 50 / 51;
+}
+
+.red3{
+    background-color: #A41401;
+    grid-row: 1 / 2;
+    grid-column: 52 / 53;
+}
+
+.yellow4{
+    background-color: #EAC807;
+    grid-row: 1 / 2;
+    grid-column: 54 / 55;
+}
+
+.red4{
+    background-color: #A41401;
+    grid-row: 1 / 2;
+    grid-column: 56 / 57;
+
+}
