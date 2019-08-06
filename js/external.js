@@ -13,7 +13,7 @@ alert("Awesome my favorite color is" + " " + userInput + " " + "too" )
 
 // You have rented some movies for your kids: The little mermaid (for 3 days), Brother Bear (for 5 days, they love it), and Hercules (1 day, you don't know yet if they're going to like it). If price for a movie per day is $3, how much will you have to pay?
 
-var dailyRentalRateDollars = 3;
+var dailyRentalRateDollars = prompt("How much id the rate for rental?");
 
 var littleMermaidDaysRented = prompt("How many days did you rent Little Mermaid for???");
 
