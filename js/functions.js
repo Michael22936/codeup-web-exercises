@@ -34,7 +34,7 @@
 
 // var myName = "Michael M";
 //
-// sayHello(myName)
+// console.log(sayHello(myName));
 
 
 // Don't modify the following line, it generates a random number between 1 and 3
@@ -59,11 +59,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-// function isTwo(random) {
-//     return random === 2;
-// }
-//
-// console.log(isTwo(random), random)
+function isTwo(number) {
+    return number === 2;
+}
+
+console.log(isTwo(2))
+console.log(isTwo(random), random)
 
 /**
  * TODO:
@@ -77,11 +78,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-// function calculatedTip(percent, bill) {
-//     return bill * (percent / 100);
-// }
-//
-// console.log(calculatedTip(30, 10.25))
+function calculatedTip(percent, bill) {
+    return percent * bill;
+}
+
+console.log(calculatedTip(1, 10.25))
 
 /**
  * TODO:
@@ -89,13 +90,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-// function calculatedTip(totalBill, tipInPercent) {
-//     var totalBill = prompt("What is your bill total?");
-//     var tipInPercent = prompt("What tip in precentage do you want to use?");
-//     return alert("Your tip amount is" + " " + totalBill * (tipInPercent / 100));
-// }
-//
-// calculatedTip();
+function calculatedTip(totalBill, tipInPercent) {
+    var totalBill = prompt("What is your bill total?");
+    var tipInPercent = prompt("What tip in precentage do you want to use?");
+    return alert("Your tip amount is" + " " + "$" + totalBill * (tipInPercent / 100));
+}
+
+calculatedTip();
 
 
 
