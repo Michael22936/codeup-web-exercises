@@ -89,13 +89,13 @@ console.log(calculatedTip(30, 10.25))
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-// function customTip(totalBill, tipInPercent) {
-//     var totalBill = prompt("What is your bill total?");
-//     var tipInPercent = prompt("What tip in precentage do you want to use?");
-//     return alert("Your tip amount is" + " " + totalBill * (tipInPercent / 100));
-// }
-//
-// costumTip();
+function calculatedTip(totalBill, tipInPercent) {
+    var totalBill = prompt("What is your bill total?");
+    var tipInPercent = prompt("What tip in precentage do you want to use?");
+    return alert("Your tip amount is" + " " + totalBill * (tipInPercent / 100));
+}
+
+calculatedTip();
 
 
 
