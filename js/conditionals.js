@@ -42,45 +42,47 @@
 
 // userNumberInput();
 
-function userNumberInput() {
-    var userNumberAsk = confirm("Would you like to enter a number?");
-    if (userNumberAsk === true) {
-        var userNumber = Number(prompt("Pick any number?"));
-        if (isNaN(userNumber)) {
-            alert("This is not a number. Please put in a number")
-        }
-    }
-        userNumberOddOrEven(userNumber);
-        userNumberPlusHundred(userNumber);
-        userNumberGreaterThanLessThan(userNumber);
-}
+// REFACTORED SOLUTION 1
 
-    function userNumberOddOrEven(userNumber) {
-        if (userNumber % 2 === 0) {
-            alert("Your number is even.")
-        } else if (userNumber % 2 === 1) {
-            alert("Your number is odd.")
-        }
-    }
-
-
-    function userNumberPlusHundred(userNumber) {
-            if (userNumber){
-                var userNumberPlusHundred = userNumber + 100;
-                alert("This is your number plus hundred" + " " + userNumberPlusHundred)
-            }
-    }
-
-
-    function userNumberGreaterThanLessThan(userNumber) {
-        if (userNumber < 0) {
-                alert("Your number is negative.")
-        } else if (userNumber > 0){
-                alert("Your number is positive.")
-        }
-    }
-
-    userNumberInput();
+// function userNumberInput() {
+//     var userNumberAsk = confirm("Would you like to enter a number?");
+//     if (userNumberAsk === true) {
+//         var userNumber = Number(prompt("Pick any number?"));
+//         if (isNaN(userNumber)) {
+//             alert("This is not a number. Please put in a number")
+//         }
+//     }
+//         userNumberOddOrEven(userNumber);
+//         userNumberPlusHundred(userNumber);
+//         userNumberGreaterThanLessThan(userNumber);
+// }
+//
+//     function userNumberOddOrEven(userNumber) {
+//         if (userNumber % 2 === 0) {
+//             alert("Your number is even.")
+//         } else if (userNumber % 2 === 1) {
+//             alert("Your number is odd.")
+//         }
+//     }
+//
+//
+//     function userNumberPlusHundred(userNumber) {
+//             if (userNumber){
+//                 var userNumberPlusHundred = userNumber + 100;
+//                 alert("This is your number plus hundred" + " " + userNumberPlusHundred)
+//             }
+//     }
+//
+//
+//     function userNumberGreaterThanLessThan(userNumber) {
+//         if (userNumber < 0) {
+//                 alert("Your number is negative.")
+//         } else if (userNumber > 0){
+//                 alert("Your number is positive.")
+//         }
+//     }
+//
+//     userNumberInput();
 /* ########################################################################## */
 
 /**
