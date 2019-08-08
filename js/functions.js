@@ -1,3 +1,7 @@
+(function () {
+
+
+
 "use strict";
 
 /**
@@ -59,12 +63,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-function isTwo(number) {
-    return number === 2;
-}
-
-console.log(isTwo(2))
-console.log(isTwo(random), random)
+// function isTwo(number) {
+//     return number === 2;
+// }
+//
+// console.log(isTwo(2))
+// console.log(isTwo(random), random)
 
 /**
  * TODO:
@@ -78,11 +82,11 @@ console.log(isTwo(random), random)
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculatedTip(percent, bill) {
-    return percent * bill;
-}
-
-console.log(calculatedTip(1, 10.25))
+// function calculatedTip(percent, bill) {
+//     return percent * bill;
+// }
+//
+// console.log(calculatedTip(1, 10.25))
 
 /**
  * TODO:
@@ -90,13 +94,13 @@ console.log(calculatedTip(1, 10.25))
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-function calculatedTip(totalBill, tipInPercent) {
-    var totalBill = prompt("What is your bill total?");
-    var tipInPercent = prompt("What tip in precentage do you want to use?");
-    return alert("Your tip amount is" + " " + "$" + totalBill * (tipInPercent / 100));
-}
-
-calculatedTip();
+// function calculatedTip(totalBill, tipInPercent) {
+//     var totalBill = prompt("What is your bill total?");
+//     var tipInPercent = prompt("What tip in precentage do you want to use?");
+//     return alert("Your tip amount is" + " " + "$" + totalBill * (tipInPercent / 100));
+// }
+//
+// calculatedTip();
 
 
 
@@ -158,4 +162,53 @@ function addFive(input) {
     return input + 5;
 }
 
-console.log(addFive(random))
+console.log(addFive(random));
+
+function isMultipleOfFive(input) {
+    return input % 5 === 0;
+}
+
+console.log(isMultipleOfFive(5));
+
+function isThree(input) {
+    return input === 3;
+}
+
+    console.log(isThree(random));
+
+function addThree(input) {
+    return input + 3;
+}
+
+console.log(addThree(random));
+
+function isMultipleOfThree(input) {
+    return input % 3 === 0;
+}
+
+console.log(isMultipleOfThree(3));
+
+function isMultipleOfThreeAndFive(input) {
+    return input % 3 === 0 && input % 5 === 0;
+}
+
+console.log(isMultipleOfThreeAndFive(15));
+
+function isMultipleOf(target, n) {
+    return n % target === 0;
+}
+
+console.log(isMultipleOf(5, 15));
+
+function isTrue(boolean) {
+    return boolean === 0;
+}
+
+console.log(isTrue(0));
+
+function isFalse(boolean){
+    return boolean < 5;
+}
+
+console.log(isFalse(9))
+})();
