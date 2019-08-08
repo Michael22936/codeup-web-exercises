@@ -49,27 +49,30 @@ function userNumberInput() {
         if (isNaN(userNumber)) {
             alert("This is not a number. Please put in a number")
         }
-        userNumberOddOrEven(oddOrEven);
-        userNumberPlusHundred(plusHundred);
-        userNumberGreaterThanLessThan(greaterThanLessThan);
     }
+        userNumberOddOrEven(userNumber);
+        userNumberPlusHundred(userNumber);
+        userNumberGreaterThanLessThan(userNumber);
 }
 
-    function userNumberOddOrEven(oddOrEven) {
-    var oddOrEven = userNumberOddOrEven();
+    function userNumberOddOrEven(userNumber) {
         if (userNumber % 2 === 0) {
             alert("Your number is even.")
         } else if (userNumber % 2 === 1) {
             alert("Your number is odd.")
         }
     }
-    function userNumberPlusHundred(plusHundred) {
+
+
+    function userNumberPlusHundred(userNumber) {
             if (userNumber){
-                var userNumberPlusHundred = userNumber + 100
-                alert("This is your number plus 100")
+                var userNumberPlusHundred = userNumber + 100;
+                alert("This is your number plus hundred" + " " + userNumberPlusHundred)
             }
-            }
-    function userNumberGreaterThanLessThan(greaterThanLessThan) {
+    }
+
+
+    function userNumberGreaterThanLessThan(userNumber) {
         if (userNumber < 0) {
                 alert("Your number is negative.")
         } else if (userNumber > 0){
@@ -77,6 +80,7 @@ function userNumberInput() {
         }
     }
 
+    userNumberInput();
 /* ########################################################################## */
 
 /**
