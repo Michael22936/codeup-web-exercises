@@ -14,10 +14,10 @@
 //
 //     do {
 //     var conesPerPerson = Math.floor(Math.random() * 5) + 1;
-//         allCones = allCones - conesPerPerson;
 //         if (allCones > conesPerPerson) {
 //             console.log('if theres enough cones ' + conesPerPerson);
 //         }else if (allCones < conesPerPerson) {
+//         allCones = allCones - conesPerPerson;
 //             console.log('Sorry i dont have that many ' + allCones)
 //         }else {
 //             console.log('Sold out')
