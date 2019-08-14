@@ -70,9 +70,9 @@
     }
     seconds(names);
 
-    function thirds(array) {
+    function last(array) {
         console.log(array[3]);
     }
-    thirds(names);
+    last(names);
 
 })();
