@@ -38,18 +38,101 @@ function isEven(number) {
 }
 
 // - Make a function named isPositive(number) that returns true if the provided input is a positive number. False for zero or any other number or data type.
+
+function isPositive(number) {
+    if(number >= 0){
+        return true;
+    }else {
+        return false;
+    }
+}
+
 // - Make a function named isNegative(number) that returns true if the provided input is a negative number. False for zero or any other number or data type.
+
+function isNegative(number) {
+    if(number < 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 // - Make a function named identity(input) that returns the input exactly as provided.
+
+function identity(input) {
+    return input;
+}
+
 // - Make a function named isFive(input)
+
+function isFive(input) {
+    if(input === 5){
+        return true;
+    }
+}
+
 // - Make a function named addFive(input) that adds five to some input.
+
+function addFive(input) {
+    return input + 5;
+}
+
 // - Make a function named isMultipleOfFive(input)
+
+function isMultipleOfFive(input) {
+    if(input / 5 === 0){
+        return true;
+    }
+}
+
 // - Make a function named isThree(input)
+
+function isThree(input) {
+    return input === 3;
+}
+
 // - Make a function named isMultipleOfThree(input)
+
+function isMultipleOfThree(input) {
+    if(input / 3 === 0){
+        return true;
+    }
+}
+
 // - Make a function named isMultipleOfThreeAndFive(input)
+
+function isMultipleOfThreeAndFive(input) {
+    if(input / 3 === 0 && input / 5 === 0){
+        return true;
+    }
+}
+
 // - Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
+
+function isMultipleOf(target, n) {
+    if (target / n === 0){
+        return true;
+    }
+}
+
 // - Make a function named isTrue(boolean)
+
+function isTrue(boolean) {
+    return boolean === true;
+}
+
 // - Make a function named isFalse(boolean)
+
+function isFalse(boolean) {
+    return boolean === false;
+}
+
 // - Make a function named isTruthy(input) // remember that values other than true will behave like true. you may need to lookup truthy/falsy values in JavaScript
+
+function isTruthy() {
+    
+}
+
 // - Make a function named isFalsy(input) // remember that values other than false behave like false
 // - Make a function named isVowel(letter)
 // - Make a function named isConsonant(letter)
