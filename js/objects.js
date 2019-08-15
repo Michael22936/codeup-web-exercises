@@ -30,11 +30,11 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    person.sayHello = function (input1, input2) {
-        return "Hello from " + input1 + " " + input2 + "!"
+    person.sayHello = function () {
+        return "Hello from " + this.firstName + " " + this.lastName + "!"
     }
 
-    console.log(person.sayHello(person.firstName, person.lastName));
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -190,6 +190,26 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+        function  createAuthor(firstName, lastName){
+            return{
+                firstName: firstName,
+                lastNmae: lastName
+            }
+    }
+        function createBook(title, author) {
+            return{
+                title: title,
+                author: author
+            }
+        }
+        books.push(createBook("hello world", createAuthor("bob Joe")));
+
+    books.forEach(function (book, index) {
+        console.log(index + 1);
+        console.log(book.title);
+        console.log(book.author.firstName + " " + book.author.lastName);
+    })
 
 
 
