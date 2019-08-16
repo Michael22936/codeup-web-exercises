@@ -32,6 +32,8 @@
     <button id="btn4">Click Me!</button>
 </div>
 
+<h1><span id="counternumber">0</span></h1>
+
 <script>
     (function() {
         "use strict";
@@ -41,7 +43,13 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
-        mainHeader.innerHTML = "JavaScript is Cool";
+        // mainHeader.innerHTML = "JavaScript is Cool";
+
+        var listener = function () {
+            mainHeader.innerHTML = 'JavaScript is Cool';
+        };
+
+        document.getElementById('btn1').addEventListener('click', listener, false);
 
         // TODO: Uncomment the next line and get the sub header element by id
 
@@ -49,7 +57,13 @@
 
         // TODO: Set the text color of subHeader to blue
 
-        subHeader.style.color = "blue";
+        // subHeader.style.color = "blue";
+
+        var button2 = function (event) {
+            subHeader.style.color = 'blue';
+        };
+
+        document.getElementById('btn2').addEventListener('click', button2, false);
 
         // TODO: Uncomment the next line and get all list items
 
@@ -57,19 +71,24 @@
 
         // TODO: Set text color on every other list item to grey
 
-        for (var i = 0; i < listItems.length; i++) {
-            var dbId = listItems[i++].style.color = 'gray';
-            console.log(dbId);
-        }
+        // for (var i = 0; i < listItems.length; i++) {
+        //     var dbId = listItems[i++].style.color = 'gray';
+        //     console.log(dbId);
+        // }
 
 
         // TODO: Set text color of li with dbid = 1 to blue
 
-        // listItems[0].style.color = 'blue';
+        // document.querySelector('li[data-dbid="1"]').style.color = 'blue';
 
-        var DBID = document.querySelector('li[data-dbid="1"]');
 
-        DBID.style.color = 'blue';
+        document.getElementById('btn3').addEventListener('click', function (evt) {
+            for (var i = 0; i < listItems.length; i++) {
+                var dbId = listItems[i++].style.color = 'gray';
+                console.log(dbId);
+            }
+            document.querySelector('li[data-dbid="1"]').style.color = 'blue';
+        });
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
@@ -77,42 +96,48 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
-        subParagraphs.innerHTML = 'Mission Accomplished';
-
-        var listener = function () {
-            mainHeader.style.color = 'blue';
-            subHeader.innerHTML = 'JavaScript is Cool';
-        };
-
-        document.getElementById('btn1').addEventListener('click', listener, false);
-        
-        
-        var button2 = function () {
-            subParagraphs.innerHTML = 'Hello there world';
-        };
-
-
-        document.getElementById('btn1').addEventListener('click', listener, false);
-
-        var button2 = function () {
-            subParagraphs.innerHTML = 'Hello there world';
-        };
-
-
-        document.getElementById('btn2').addEventListener('click', button2, false);
-
-        var button3 = function () {
-            subParagraphs.style.color = 'white';
-            mainHeader.style.color = 'white';
-        };
-
-        document.getElementById('btn3').addEventListener('click', button3, false);
+        // subParagraphs.innerHTML = 'Mission Accomplished';
 
         var button4 = function () {
-            prompt('How was your day?')
+            subParagraphs.innerText = 'Mission Accomplished!';
         };
 
         document.getElementById('btn4').addEventListener('click', button4, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var extra = document.addEventListener('keyup', function (ev) {
+            if (ev.key === 'g') {
+
+            document.body.style.backgroundColor = 'purple';
+
+            }
+        });
+
+        var extra1 = document.addEventListener("keypress", function (ev1) {
+
+            if (ev1.key === '1'){
+                alert("You get a 50% discount!");
+            }
+
+        });
+
+        var counter = 0;
+
+        document.getElementById('counternumber', function (e) {
+        });
 
     })();
 </script>
