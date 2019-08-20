@@ -22,7 +22,7 @@ function isIdentical(input1, input2) {
 // - Make a function named not(input) returns the input with a flipped boolean
 
 function not(input) {
-    return !==input;
+    return !input;
 }
 
 // - Make a function named isOdd(number) that returns true if the number is odd
@@ -141,15 +141,65 @@ function isTruthy() {
 // - Make a function named hasLowerCase(string) that returns if a string has any lower cased
 // - Make a function named isSpace(letter) that returns if a character is a space character
 // - Make a function named isZero(number)
+
+function isZero(number) {
+    return number === 0;
+}
+
 // - Make a function named notZero(input) that returns true if the input is any number except for zero.
-//                                                                                                - Write a function named lowerCase(string)
+
+function notZero(input) {
+    if (input === 0){
+    return false;
+
+    } else {
+        return input;
+    }
+}
+
+// - Write a function named lowerCase(string)
 // - Write a function named double(n) that returns a number times two
+
+function double(n) {
+    return n * 2;
+}
+
 // - Write a function named triple(n) that returns a number times 3
+
+function triple(n) {
+    return n * 3;
+}
+
 // - Write a function named quadruple(n) that returns a number times 4
+
+function quadruple(n) {
+    return n * 4;
+}
+
 // - Write a function named half(n) that returns 1/2 of the provided input
+
+function half(n) {
+    return n / 2;
+}
+
 // - Write a function named subtract(a, b) that returns a minus b
+
+function subtract(a, b) {
+    return a - b;
+}
+
 // - Write a function named multiply(a, b) that returns the product of a times b
+
+function munliply(a, b) {
+    return a * b;
+}
+
 // - Write a function named divide(a, b) that returns a divided by b
+
+function divide(a, b) {
+    return a / b;
+}
+
 // - Write a function named remainder(a, b) that returns the remainder after dividing a by b
 // - Make a function named modulo(a, b) that returns the returns the remainder after dividing a by b
 // - Write a function named cube(n) that returns n * n * n
