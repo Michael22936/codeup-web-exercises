@@ -2,9 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function remove9s(arr) {
+        var newArr = [];
+        arr.forEach(function (num) {
+            if (num !== 9){
+
+            newArr.push(num);
+            }
+        });
+        return newArr
+    }
+
+    function average(arr) {
+        var total = 0;
+        arr.forEach(function (num) {
+            total += num;
+        });
+        return total / arr.length;
+    }
+
+    function countOdds(arr) {
+        var count = 0;
+
+        arr.forEach(function (num) {
+           if (num % 2 === 1){
+               count++;
+           }
+        });
+        return count;
+    }
+
+    function convertNameToObject(name) {
+        var chopped = name.split(" ");
+
+        return{
+            firstName: chopped [0],
+            lastName: chopped [1]
+        };
+
+    }
+
+    function capitalizeName(name) {
+        // var nameObj = convertNameToObject(name);
+        // var firstName = nameObj.firstName.substring(0,1).toUpperCase() + nameObj.firstName.substring(1).toLowerCase();
+        // var lastName = nameObj.lastName.substring(0,1).toUpperCase() + nameObj.laseName.substring(1).toLowerCase();
+        //
+        // return firstName + ' ' + lastName;
+
+        // var chopped = name.split('');
+        //
+        // chopped.forEach(function (partOfName, i, arr) {
+        //     arr[i] = partOfName.substring(0,1).toUpperCase() + partOfName.substring(1).toLowerCase();
+        // });
+        // return chopped.join(' ');
+
+        var chopped = name.split(' ');
+
+        var firstname = chopped[0].charAt(0).toUpperCase() + chopped[0].slice(1);
+        var lastname = chopped[1].charAt(0).toUpperCase() + chopped[1].slice(1);
+
+        return firstname + ' ' + lastname;
+    }
+
+    function capitalizeAllNames(arr) {
+        var newArray = [];
+        arr.forEach(function (name) {
+            newArray.push(capitalizeName(name))
+        });
+        return newArray;
+    }
+
+    function countVowels(str) {
+        // var chopped = str.toLowerCase().split('');
+        // var count = 0;
+        // chopped.forEach(function (letter) {
+        //     if (letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u'){
+        //         count++
+        //     }
+        // });
+        // return count;
+
+        var chopped = str.toLowerCase().split('');
+        var vowels = ['a', 'e', 'i', 'o', 'u'];
+        var count = 0;
+        chopped.forEach(function (letter) {
+            if (vowels.indexOf(letter) >= 0){
+                count++
+            }
+        });
+        return count;
+    }
+
+    function averageSales(salesPeople) {
+        var sales = [];
+
+        salesPeople.forEach(function (salesPerson) {
+            sales.push(salesPerson.sales)
+        });
+//        return average(sales);
+
+        var total = 0;
+            sales.forEach(function (num) {
+                total += num
+            });
+
+        return total / sales.length;
+    }
+
+    function analyzeWord(word) {
+        return{
+            word: word,
+            numberOfLetters: word.length,
+            numberOfVowels: countVowels(word)
+        }
+    }
+
+    function analyzeAllWords(words) {
+        var arr = [];
+        words.forEach(function (word) {
+            arr.push(analyzeWord(word))
+        });
+        return arr;
+    }
+</script>
 </body>
 </html>
