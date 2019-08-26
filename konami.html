@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/konami.css">
+</head>
+<body>
+<h1> Enter The Konami Code</h1>
+<div class="crashed"></div>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+
+    var konami1 = [];
+
+    $(document).keyup(function(event) {
+
+        console.log(event.which);
+
+        konami1.push(event.which);
+
+    var konami = '38,38,40,40,37,39,37,39,66,65';
+        if (konami1.toString().indexOf(konami) >= 0){
+        konami1 = [];
+            // $('h1').html('YOU HAVE 30 LIVES. CHEATER');
+            $('body').css('background-image', 'url("img/kennydied.gif")').css('background-size', 'cover');
+            $('h1').click(function () {
+                $('body').css('background-image', 'url("img/giphy.gif")').css('background-size', '50%');
+            })
+        }
+
+    });
+
+
+
+
+</script>
+</body>
+</html>
