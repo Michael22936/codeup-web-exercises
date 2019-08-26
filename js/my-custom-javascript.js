@@ -23,6 +23,23 @@ $(document).ready(function() {
     // var contents = $('#header').html();
     //     alert(contents);
 
-    $('h1, li, p').css('background', '#ffcccc');
+    // $('h1, li, p').css('background', '#ffcccc');
 
+    $('h1').click(function () {
+        $(this).css('background-color', 'blue');
+    });
+
+    $('p').dblclick(function () {
+        $(this).css('font-size', '18px');
+    });
+
+    $('li').hover(
+        function () {
+            $(this).css('color', 'red');
+        },
+        function () {
+            $(this).css('color', 'black');
+        }
+    );
 });
+
