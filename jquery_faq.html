@@ -10,6 +10,14 @@
         .highlight{
             background-color: #Ef0;
         }
+
+        .pic{
+            border: 2px solid red;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            height: 50%;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +56,40 @@
     <dd>Yes, service dogs are legally permitted anywhere in a park that visitors can go.</dd>
 
 </dl>
+
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas1">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
+
+<button type="button">Click Me!</button>
+
+<div>
+<div>a</div>
+<div>b</div>
+<div>c</div>
+</div>
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     'use strict';
@@ -60,6 +102,47 @@
 
         $(this).toggleClass('highlight');
     });
+
+
+    $('button').click(function () {
+
+        $('ul').each(function () {
+
+            $(this).children().last().css('background', 'yellow');
+    
+        })
+
+
+    });
+    
+    $('h3').click(function () {
+
+        $(this).next().children().css('font-weight', 'bold');
+
+    });
+
+    // $('ul').click(function () {
+    //    $(this).each(function (i) {
+    //        if(i === 0 ){
+    //        $(this).first().css("color", 'blue')
+    //        }
+    //
+    //    })
+    // })
+
+    // $('#national-parks, #state-parks-texas, #state-parks-texas1').each(function () {
+    //     $(this).parents().click(function () {
+    //         $('li').first().css("color", 'blue')
+    //     })
+    // })
+
+    $('li').click(function () {
+
+      $(this).parent().children().first().css('color', 'blue')
+
+    });
+
+    $('div').addClass('pic')
 
 
 </script>
