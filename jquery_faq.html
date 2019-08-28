@@ -21,6 +21,7 @@
     </style>
 </head>
 <body>
+<div><h1>Would you like to sign up for our newsletter?</h1><span>X</span></div>
 <dl>
 
     <dt><strong>Who is the director of the National Park Service?</strong></dt>
@@ -104,22 +105,22 @@
     });
 
 
-    $('button').click(function () {
+    // $('button').click(function () {
+    //
+    //     $('ul').each(function () {
+    //
+    //         $(this).children().last().css('background', 'yellow');
+    //
+    //     })
+    //
+    //
+    // });
 
-        $('ul').each(function () {
-
-            $(this).children().last().css('background', 'yellow');
-    
-        })
-
-
-    });
-    
-    $('h3').click(function () {
-
-        $(this).next().children().css('font-weight', 'bold');
-
-    });
+    // $('h3').click(function () {
+    //
+    //     $(this).next().children().css('font-weight', 'bold');
+    //
+    // });
 
     // $('ul').click(function () {
     //    $(this).each(function (i) {
@@ -136,14 +137,21 @@
     //     })
     // })
 
-    $('li').click(function () {
+    // $('li').click(function () {
+    //
+    //   $(this).parent().children().first().css('color', 'blue')
+    //
+    // });
 
-      $(this).parent().children().first().css('color', 'blue')
-
+    $('span').click(function () {
+        $(this).parent().hide()
     });
 
-    $('div').addClass('pic')
+    $('li').hide();
 
+        $('h3').click(function () {
+            $(this).next().children().slideToggle()
+        });
 
 </script>
 </body>
