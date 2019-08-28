@@ -18,10 +18,23 @@
             width: 50%;
             height: 50%;
         }
+
+        h2{
+            display: none;
+        }
     </style>
 </head>
 <body>
-<div><h1>Would you like to sign up for our newsletter?</h1><span>X</span></div>
+
+<div>
+    <h1>Would you like to sign up for our newsletter?</h1>
+
+    <span>X</span>
+
+</div>
+
+<h2>Would you like to register for the site?</h2>
+
 <dl>
 
     <dt><strong>Who is the director of the National Park Service?</strong></dt>
@@ -149,9 +162,17 @@
 
     $('li').hide();
 
-        $('h3').click(function () {
-            $(this).next().children().slideToggle()
-        });
+    $('h3').click(function () {
+        $(this).next().children().slideToggle()
+    });
+
+    $('h2').delay(8000).fadeIn();
+
+
+
+
+
+
 
 </script>
 </body>
