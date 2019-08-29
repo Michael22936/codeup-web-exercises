@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div id="posts"></div>
+
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+
+    $.ajax('data/blog.json').done(function (posts) {
+        $('#posts').html(buildHTML(posts))
+    });
+
+    function buildHTML(posts) {
+
+        var postsHTML = '';
+
+        posts.forEach(function (post) {
+            postsHTML += '<div class="card">';
+            postsHTML += '<div class="card-body mx-auto" style="width: 50%">';
+            postsHTML += '<h1 class="card-title">'+ post.title + '</h1>';
+            postsHTML += '<hr>';
+            postsHTML += '<p class="card-text">' + post.content + '</p>';
+            postsHTML += '<h4 class="card-subtitle">' + post.categories + '</h4>';
+            postsHTML += '<h3 class="card-subtitle">' + post.date + '</h3>';
+            postsHTML += '</div>';
+            postsHTML += '</div>'
+        });
+
+        return postsHTML;
+    }
+
+</script>
+
+</body>
+</html>
