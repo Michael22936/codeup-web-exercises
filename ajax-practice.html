@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Practice</title>
+</head>
+<body>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $.ajax('https://swapi.co/api/films').done(function (data) {
+        console.log(data.results[5])
+    });
+
+    $.ajax('https://hookb.in/QJXLDxEnMYs9r92db7op?qusername=bob');
+
+    $.ajax('https://hookb.in/NOJNrO6dQxiPwPpMyaJN', {
+        type: 'POST',
+        data:{
+            name: 'Michael',
+            age: '233424'
+        }
+    });
+
+    $.ajax('https://hookb.in/NOJNrO6dQxiPwPpMyaJN', {
+        type: 'GET',
+        data:{
+            type: 'restaurants near me'
+        }
+    });
+
+    $.ajax('https://hookb.in/NOJNrO6dQxiPwPpMyaJN').done(function (data, status, jqXhr) {
+        
+    alert("AJAX call completed successfully!");
+    console.log("Request status: " + status);
+    console.log("Data returned from server:");
+    console.log(data);
+    })
+</script>
+</body>
+</html>
