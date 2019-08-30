@@ -71,15 +71,33 @@
 
         for(var i = 0; i < 3; i++ ){
 
-            icons.forEach(function (icon) {
+            var weatherCondition = "";
 
-            });
+            //Stores the icon string value into this variable
+
+            var weatherIcon = weathers.daily.data[i].icon;
+
+            //Cycles through the weatherObjects array
+
+            icons.forEach(function(element) {
+
+                //check to see if the icon string value is found in the weatherObjects array
+
+                if(weatherIcon === element.conditions) {
+
+                    //Puts the url for the correct image into the weatherCondition variable
+
+                    weatherCondition += element.url;
+
+                } //if
+
+            }); //forEach()
 
         var dateTime = new Date((weathers.daily.data[i].time) * 1000);
             weathersHTML += '<div class="card">';
             weathersHTML += '<ul>';
             weathersHTML += '<li>' + dateTime + '</li>';
-            weathersHTML += '<li>' + weathers.daily.data[i].icon + '</li>';
+            weathersHTML += '<img src=' + weatherCondition + '>';
             weathersHTML += '<li>' + weathers.daily.data[i].apparentTemperatureHigh + ' / ' + weathers.daily.data[i].apparentTemperatureLow + '</li>';
             weathersHTML += '<li>' + weathers.daily.data[i].humidity + '</li>';
             weathersHTML += '</ul>';
