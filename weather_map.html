@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div  id="container" class="d-flex flex-wrap justify-content-around"></div>
+<script src="js/jquery-2.2.4.js" ></script>
+<script src="js/keys.js"></script>
+<script>
+
+    var icons = [
+        {
+            conditions: 'clear-day',
+            url: 'icon/SVG/Sun.svg'
+        },
+        {
+            conditions: 'clear-night',
+            url: 'icon/SVG/Moon.svg'
+        },
+        {
+            conditions: 'rain',
+            url: 'icon/SVG/Cloud-Rain.svg'
+        },
+        {
+            conditions: 'snow',
+            url: 'icon/SVG/Cloud-Snow.svg'
+        },
+        {
+            conditions: 'sleet',
+            url: 'icon/SVG/Cloud-Hail.svg'
+        },
+        {
+            conditions: 'wind',
+            url: 'icon/SVG/Wind.svg'
+        },
+        {
+            conditions: 'fog',
+            url: 'icon/SVG/Cloud-Fog.svg'
+        },
+        {
+            conditions: 'cloudy',
+            url: 'icon/SVG/Cloud.svg'
+        },
+        {
+            conditions: 'partly-cloudy-day',
+            url: 'icon/SVG/Cloud-Sun.svg'
+        },
+        {
+            conditions: 'partly-cloudy-night',
+            url: 'icon/SVG/Cloud-Moon.svg'
+        }
+
+    ];
+
+    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/29.4241,-98.4936").done(function (weathers) {
+
+        console.log(weathers);
+
+        $('#container').html(buildHTML(weathers))
+    });
+
+    function buildHTML(weathers) {
+
+        console.log(weathers.daily.data);
+
+        var weathersHTML = '';
+
+
+        for(var i = 0; i < 3; i++ ){
+
+            icons.forEach(function (icon) {
+
+            });
+
+        var dateTime = new Date((weathers.daily.data[i].time) * 1000);
+            weathersHTML += '<div class="card">';
+            weathersHTML += '<ul>';
+            weathersHTML += '<li>' + dateTime + '</li>';
+            weathersHTML += '<li>' + weathers.daily.data[i].icon + '</li>';
+            weathersHTML += '<li>' + weathers.daily.data[i].apparentTemperatureHigh + ' / ' + weathers.daily.data[i].apparentTemperatureLow + '</li>';
+            weathersHTML += '<li>' + weathers.daily.data[i].humidity + '</li>';
+            weathersHTML += '</ul>';
+            weathersHTML += '</div>'
+
+        }
+
+
+        return weathersHTML;
+
+    }
+
+
+</script>
+</body>
+</html>
