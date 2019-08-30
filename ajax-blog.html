@@ -25,10 +25,10 @@
             postsHTML += '<div class="card">';
             postsHTML += '<div class="card-body mx-auto" style="width: 50%">';
             postsHTML += '<h1 class="card-title">'+ post.title + '</h1>';
+            postsHTML += '<h3 class="card-subtitle">' + post.date + '</h3>';
             postsHTML += '<hr>';
             postsHTML += '<p class="card-text">' + post.content + '</p>';
-            postsHTML += '<h4 class="card-subtitle">' + post.categories + '</h4>';
-            postsHTML += '<h3 class="card-subtitle">' + post.date + '</h3>';
+            postsHTML += '<h4 class="card-subtitle">' + post.categories.join(', ') + '</h4>';
             postsHTML += '</div>';
             postsHTML += '</div>'
         });
