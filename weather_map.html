@@ -17,13 +17,46 @@
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
 
 <script>
-    mapboxgl.accessToken = mapBoxToken;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 1,
-        center: [-98.4936, 29.4241]
-    });
+
+        // MapBox
+        mapboxgl.accessToken = mapBoxToken;
+        var map = new mapboxgl.Map({
+            container: 'map',  // container id
+            style: 'mapbox://styles/mapbox/streets-v9',
+            // style: 'mapbox://styles/mapbox/streets-v11',
+            zoom: 9,
+            // center: [-122.420679, 37.772537] // San Francisco
+            center: [-98.4916, 29.4252] // San Antonio
+            // center: [-77.0369, 38.9072] // Washington D.C
+            // center: [-97.7718784, 31.0810943] // Killeen, TX
+        });
+        // Draggable marker
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([-98.4916, 29.4252])
+            .addTo(map);
+
+        function onDragEnd() {
+            // lngLat variable gets the long and lat values where the marker is.
+            var lngLat = marker.getLngLat();
+            coordinates.style.display = 'block';
+            coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+            return lngLat;
+        }
+        // console.log(onDragEnd());
+
+        marker.on('dragend', onDragEnd);
+
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+
+        map.on("mouseup", function() {
+            // console.log(map.getCenter());
+            console.log(onDragEnd());
+        });
+
+     // End of mapBoxApi function
 
     var icons = [
         {
