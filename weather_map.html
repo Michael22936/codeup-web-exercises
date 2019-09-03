@@ -23,6 +23,7 @@
             z-index: 1;
         }
 
+
         #container{
             display: flex;
             justify-content: space-evenly;
@@ -123,6 +124,8 @@
 
                     var weatherCondition = "";
 
+                    var weatherConditionicon = "";
+
                     //Stores the icon string value into this variable-->
 
                     var weatherIcon = weathers.daily.data[i].icon;
@@ -137,7 +140,7 @@
 
 // <!--                    //Puts the url for the correct image into the weatherCondition variable-->
 
-                        weatherCondition += element.url;
+                        weatherConditionicon += element.url;
 
                         } //if
 
@@ -147,10 +150,10 @@
 
                     var humidity = weathers.daily.data[i].humidity * 100;
 
-                    weathersHTML += '<div class="card" style="background-color: #F7F9E5">';
+                    weathersHTML += '<div class="card">';
                     weathersHTML += '<div class="card-body">';
                     weathersHTML += '<h3>' + readyDate(weathers.daily.data[i].time) + '</h3>';
-                    weathersHTML += '<img src=' + weatherCondition + '>';
+                    weathersHTML += '<img src=' + weatherConditionicon + '>';
                     weathersHTML += '<p>' + 'High: ' + weathers.daily.data[i].apparentTemperatureHigh + ' / '+ 'Low: ' + weathers.daily.data[i].apparentTemperatureLow + '</p>';
                     weathersHTML += '<p>' + 'Humidity: ' + Math.round(humidity) + '%' + '</p>';
                     weathersHTML += '<p>' + 'Chance of rain: ' + Math.round(percip)+ '%' + '</p>';
@@ -183,7 +186,8 @@
         var icons = [
             {
                 conditions: 'clear-day',
-                url: 'icon/SVG/Sun.svg'
+                url: 'icon/SVG/Sun.svg',
+                gif: 'icon/SVG/clear-day.webp'
             },
             {
                 conditions: 'clear-night',
@@ -191,7 +195,8 @@
             },
             {
                 conditions: 'rain',
-                url: 'icon/SVG/Cloud-Rain.svg'
+                url: 'icon/SVG/Cloud-Rain.svg',
+                gif: 'icon/SVG/rain-gif.gif'
             },
             {
                 conditions: 'snow',
