@@ -34,13 +34,13 @@
 <body>
 <div style="background-color: #05415A">
     <h1 style="color: whitesmoke">Weather Application</h1>
-    <h3 style="color: whitesmoke" class="d-flex justify-content-center">3 Day Forecast</h3>
+    <h3 style="color: whitesmoke" class="d-flex flex-wrap justify-content-center">3 Day Forecast</h3>
     <div  id="container"></div>
     <pre id='coordinates' class='coordinates'></pre>
 <!--<input type="text" placeholder="Latitude"><input type="text" placeholder="Longitude"><input type="button" value="Click Me">-->
     <h3 style="color: whitesmoke" class="d-flex justify-content-center">Search A Place</h3>
     <div class="d-flex justify-content-center">
-        <div id="map" style=" width: 90%; height: 45vh;"></div>
+        <div id="map" style=" width: 90%; height: 45vh; margin-bottom: 45px"></div>
     </div>
 </div>
 <script src="js/jquery-2.2.4.js" ></script>
@@ -53,9 +53,62 @@
 
     $(document).ready(function () {
 
+        mapboxgl.accessToken = mapBoxToken;
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            center: [-98.4916, 29.4252],
+            zoom: 9
+        });
+
+        var marker = new mapboxgl.Marker({
+            color: 'CornflowerBlue',
+            draggable: true
+        })
+            .setLngLat([-98.49833072656223, 29.4275918210229])
+            .addTo(map);
+
+
+        map.addControl(new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken
+            // mapboxgl: mapboxgl
+        }));
+
+
+        var lngLat = [];
+
+        var mapInput = '29.4252, -98.4916';
+
+        function onDragEnd() {
+            lngLat = marker.getLngLat();
+            mapInput = lngLat.lat + ',' + lngLat.lng;
+            coordinates.style.display = 'block';
+            coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+            weatherUpdate();
+        }
+
+        marker.on('dragend', onDragEnd);
+
+        map.addControl(new mapboxgl.NavigationControl());
+
+        map.on("moveend", function () {
+            console.log(map.getCenter());
+            marker.setLngLat(map.getCenter());
+            lngLat = map.getCenter();
+            mapInput = lngLat.lat + ',' + lngLat.lng;
+            mapInputLong = lngLat.lng;
+            mapInputLat = lngLat.lat;
+            weatherUpdate();
+        });
+
         var weatherObject = {};
 
-        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/29.4241,-98.4936").done(function (weathers) {
+    console.log(mapInput);
+
+    function weatherUpdate(){
+
+        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/"+ mapInput).done(function (weathers) {
 
             weatherObject = weathers;
 
@@ -111,6 +164,10 @@
             $('#container').html(buildHTML(weatherObject));
 
         });
+        }
+
+
+
 
         function readyDate(data) {
             var dateObject = new Date(data * 1000);
@@ -167,114 +224,7 @@
 
         ];
 
-        mapboxgl.accessToken = mapBoxToken;
-
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9',
-            center: [-98.273111, 29.801281],
-            zoom: 8
-        });
-
-        var marker = new mapboxgl.Marker({
-            color: 'CornflowerBlue',
-            draggable: true
-        })
-        .setLngLat([-98.273111, 29.801282])
-        .addTo(map);
-
-
-        map.addControl(new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken
-            // mapboxgl: mapboxgl
-        }));
-
-
-        var lngLat = [];
-
-        var mapInput = '-98.273111, 29.801281';
-
-        function onDragEnd() {
-            lngLat = marker.getLngLat();
-            mapInput = lngLat.lat + ',' + lngLat.lng;
-            coordinates.style.display = 'block';
-            coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
-            weatherUpdate();
-        }
-
-        marker.on('dragend', onDragEnd);
-
-        map.addControl(new mapboxgl.NavigationControl());
-
-        map.on("moveend", function () {
-            console.log(map.getCenter());
-            marker.setLngLat(map.getCenter());
-            lngLat = map.getCenter();
-            mapInput = lngLat.lat + ',' + lngLat.lng;
-            mapInputLong = lngLat.lng;
-            mapInputLat = lngLat.lat;
-            weatherUpdate();
-        });
-
-
-        function weatherUpdate(){
-
-            $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey + "/" + mapInput).done(function (weathers) {
-
-                weatherObject = weathers;
-
-                function buildHTML(weathers) {
-
-                    var weathersHTML = '';
-
-
-                    for(var i = 0; i < 3; i++ ){
-
-                        var weatherCondition = "";
-
-                        //Stores the icon string value into this variable-->
-
-                        var weatherIcon = weathers.daily.data[i].icon;
-
-                        //Cycles through the weatherObjects array
-
-                        icons.forEach(function(element) {
-
-// <!--                     //check to see if the icon string value is found in the weatherObjects array-->
-
-                            if(weatherIcon === element.conditions) {
-
-// <!--                         //Puts the url for the correct image into the weatherCondition variable-->
-
-                                weatherCondition += element.url;
-
-                            } //if
-
-                        }); //forEach()
-
-                        var percip = weathers.daily.data[i].precipProbability * 100;
-
-                        var humidity = weathers.daily.data[i].humidity * 100;
-
-                        weathersHTML += '<div class="card" style="background-color: #F7F9E5">';
-                        weathersHTML += '<div class="card-body">';
-                        weathersHTML += '<h3>' + readyDate(weathers.daily.data[i].time) + '</h3>';
-                        weathersHTML += '<img src=' + weatherCondition + '>';
-                        weathersHTML += '<p>' + 'High: ' + weathers.daily.data[i].apparentTemperatureHigh + ' / '+ 'Low: ' + weathers.daily.data[i].apparentTemperatureLow + '</p>';
-                        weathersHTML += '<p>' + 'Humidity: ' + Math.round(humidity) + '%' + '</p>';
-                        weathersHTML += '<p>' + 'Chance of rain: ' + Math.round(percip) + '%' + '</p>';
-                        weathersHTML += '</div>';
-                        weathersHTML += '</div>'
-
-                    }
-                    return weathersHTML;
-
-                }
-
-                $('#container').html(buildHTML(weatherObject));
-
-            });
-        }
+        weatherUpdate();
     });
 
 
