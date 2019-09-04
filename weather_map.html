@@ -71,10 +71,12 @@
             .addTo(map);
 
 
-        map.addControl(new MapboxGeocoder({
+        var geocoder = new  MapboxGeocoder({
             accessToken: mapboxgl.accessToken
             // mapboxgl: mapboxgl
-        }));
+        });
+
+        map.addControl(geocoder);
 
 
         var lngLat = [];
@@ -93,9 +95,21 @@
 
         map.addControl(new mapboxgl.NavigationControl());
 
+        // Geocoder results
+        geocoder.on('result', function(result) {
+            var lat = result.result.center[1];
+            var long = result.result.center[0];
+            marker.setLngLat([long, lat]);
+            console.log(lat);
+            console.log(long);
+            console.log(result);
+            // $('h2').html(result.result.place_name);
+            weatherUpdate(); // Sends the weather api the updated lat and long.
+        });
+
         map.on("moveend", function () {
             console.log(map.getCenter());
-            marker.setLngLat(map.getCenter());
+            // marker.setLngLat(map.getCenter());
             lngLat = map.getCenter();
             mapInput = lngLat.lat + ',' + lngLat.lng;
             mapInputLong = lngLat.lng;
@@ -151,7 +165,7 @@
                     var humidity = weathers.daily.data[i].humidity * 100;
 
                     weathersHTML += '<div class="card">';
-                    weathersHTML += '<div class="card-body">';
+                    weathersHTML += '<div class="card-body" style="background: #F7F9E5">';
                     weathersHTML += '<h3>' + readyDate(weathers.daily.data[i].time) + '</h3>';
                     weathersHTML += '<img src=' + weatherConditionicon + '>';
                     weathersHTML += '<p>' + 'High: ' + weathers.daily.data[i].apparentTemperatureHigh + ' / '+ 'Low: ' + weathers.daily.data[i].apparentTemperatureLow + '</p>';
