@@ -62,7 +62,15 @@ let longestEmail = users.reduce(function (total, emails) { return total.email.le
 
 console.log(longestEmail);
 
-let usernames = users.reduce((finalString, person) =>finalString + `${person.name}, .`, 'Your instructors are: ');
+let usernames = users.reduce( function(finalString, person, index){
+    if (index === users.length -1){
+
+    return finalString + `${person.name}. `
+
+    } else {
+        return finalString + `${person.name}, `
+    }
+}, 'Your instructors are: ');
 
 console.log(usernames);
 
