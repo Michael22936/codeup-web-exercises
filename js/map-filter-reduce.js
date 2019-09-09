@@ -77,3 +77,13 @@ console.log(usernames);
 
 ///////BONUS////////////
 
+const uniquelang = users.reduce((listOfLang, user)=> {
+    for (const lang of user.languages){
+        if(listOfLang.indexOf(lang)===-1){
+            listOfLang.push(lang);
+        }
+    }
+    return listOfLang;
+}, []);
+
+console.log(uniquelang);
