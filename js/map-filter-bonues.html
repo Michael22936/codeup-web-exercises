@@ -100,14 +100,28 @@
         // PROBLEM 2 - create array of user objects based on the customers array
         // of objects (each user object should just have name and age properties)
 
-        let users = customers.reduce((customer)=> customer.name && customer.age);
+        let users = customers.map((customer)=>{ return {Name:customer.name, Age:customer.age}});
 
         console.log(users);
 
         // PROBLEM 3 - create an array of civil servant customers (teachers and police officers)
         // containing the same properties as the objects on the customers objects
 
+        let civilUsers = customers.filter((customer)=> {
+            if(customer.occupation === "Teacher"){
+                return users
+            }else if(customer.occupation === "Police Officer"){
+                return users
+            }
+        });
+
+        console.log(civilUsers);
+
         // PROBLEM 4 - determine the average age of customers
+
+        let avgAgeCustomer = customers.reduce((total,sum)=> total + sum.age/customers.length, 0);
+
+        console.log(avgAgeCustomer);
 
         // PROBLEM 5 - create a function makeSuperPet() that takes in the pets array as input and returns a single pet object
         // with the following shape...
