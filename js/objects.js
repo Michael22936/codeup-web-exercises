@@ -12,6 +12,8 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    // saves name into array
+
     var person = {};
 
     person.firstName = "Michael";
@@ -30,9 +32,10 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
+    //prints out name with hello from
     person.sayHello = function () {
         return "Hello from " + this.firstName + " " + this.lastName + "!"
-    }
+    };
 
     console.log(person.sayHello());
 
@@ -56,7 +59,7 @@
         {name: 'George', amount: 320}
     ];
 
-    // console.log(shoppers[0]);
+
 
     shoppers.forEach(function (shopper) {
         console.log(shopper.name + " " + shopper.amount + " " + moneyAfterDiscount(shopper.amount));
@@ -65,47 +68,13 @@
     function moneyAfterDiscount(input) {
         var inputNum = parseFloat(input)
         if (inputNum >= 200){
-            var inputNumDiscount = inputNum - (inputNum * .12)
-        // console.log(inputNum - (inputNum * .12))
+            var inputNumDiscount = inputNum - (inputNum * .12);
             return " 12% " + inputNumDiscount
         } else{
             return inputNum;
         }
     }
-    // moneyAfterDiscount(250);
 
-
-    //
-    // var cars = [
-    //     {
-    //         make: "Toyota",
-    //         model: "Camry",
-    //         features: ["Automatic Windows", "Bluetooth Connectivity", "GPS Navigation"],
-    //         owner: {
-    //             name: "Jane Doe",
-    //             age: 30
-    //         }
-    //     },
-    //     {
-    //         make: "Honda",
-    //         model: "Accord",
-    //         features: ["Automatic Windows", "Great Gas Mileage", "AM/FM Radio"],
-    //         owner: {
-    //             name: "John Doe",
-    //             age: 31
-    //         }
-    //     }
-    // ];
-    //
-    // // console.log("The first car is a " + cars[0].make + " " + cars[0].model + ".");
-    // // console.log("The owner of the second car is " + cars[1].owner.name + ".");
-    //
-    // console.log("Here are all the features of all the cars:");
-    // shoppers.forEach(function (shopper) {
-    //     shopper.features.forEach(function(shopper) {
-    //         console.log(amount);
-    //     });
-    // });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -147,7 +116,7 @@
                 firstName:"Kohei",
                 lastName:"Horikoshi"
             }},
-    ]
+    ];
 
     /**
      * TODO:
@@ -174,11 +143,12 @@
      *      ...
      */
 
+    //prints out the books in the format above
     books.forEach(function (book, index) {
         console.log(index + 1);
         console.log(book.title);
         console.log(book.author.firstName + " " + book.author.lastName);
-    })
+    });
 
     /**
      * Bonus:
@@ -191,10 +161,11 @@
      *   `showBookInfo` function.
      */
 
+    //able to add books to the array and print it out with a new book at the end
         function  createAuthor(firstName, lastName){
             return{
                 firstName: firstName,
-                lastNmae: lastName
+                lastName: lastName
             }
     }
         function createBook(title, author) {
