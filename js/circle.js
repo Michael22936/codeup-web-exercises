@@ -2,6 +2,7 @@
     "use strict";
 
     // create a circle object
+    // get the area of a circle
     var circle = {
         radius: 3,
 
@@ -13,6 +14,8 @@
 
             return area; // TODO: return the proper value
         },
+
+        // round the number if its true else just print out the entire number
 
         logInfo: function (doRounding) {
             // TODO: complete this method.
