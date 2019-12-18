@@ -1,4 +1,6 @@
 (function(){
+
+    //makes javascript more strict
     "use strict";
 
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
@@ -10,6 +12,7 @@
      * console.log planetsArray to check your work
      */
 
+    //takes in a string and splits it at the pipe
     var planetsArray = planetsString.split('|');
     console.log(planetsArray);
 
@@ -19,8 +22,9 @@
      * results. Why might this be useful?
      */
 
-     var myPlanets = planetsArray.join('<br>')
-    console.log(myPlanets)
+    // takes a string and add a brake into it
+     var myPlanets = planetsArray.join('<br>');
+    console.log(myPlanets);
 
 
 
@@ -29,9 +33,10 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-        planetsArray.unshift('<ul>')
+        // takes the string and turn it into a list and save it into a list
+        planetsArray.unshift('<ul>');
 
-        planetsArray.push('<ul>')
+        planetsArray.push('<ul>');
 
         var myPlanetsArray = planetsArray.join('<li>');
 
