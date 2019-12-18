@@ -87,3 +87,8 @@ const uniquelang = users.reduce((listOfLang, user)=> {
 }, []);
 
 console.log(uniquelang);
+
+if (true) {
+    let x = 5;
+}
+console.log(typeof x);
